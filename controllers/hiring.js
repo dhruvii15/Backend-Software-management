@@ -41,8 +41,8 @@ exports.Update = async function (req, res, next) {
     try {
         if (req.file) {
             req.body.resume = req.file.filename
-
         }
+        
         let dataUpdate = await HIRING.findByIdAndUpdate(req.params.id, req.body, { new: true })
         res.status(201).json({
             status: "Success!",

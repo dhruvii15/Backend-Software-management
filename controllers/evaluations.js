@@ -3,6 +3,14 @@ const EVA = require('../models/evaluations');
 
 exports.Create = async function (req, res, next) {
     try {
+
+        console.log(req.body);
+        
+        req.body.work = req.body.grades.work
+        req.body.leave = req.body.grades.leave
+        req.body.time = req.body.grades.time
+        req.body.behaviour = req.body.grades.behaviour
+        
         const dataCreate = await EVA.create(req.body);
 
         res.status(201).json({
