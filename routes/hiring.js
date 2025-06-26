@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage: storage }) 
+const upload = multer({ storage: storage })  
 
 /* GET service listing. */
 router.post('/create', upload.single('resume'), hiringControllers.Create);
